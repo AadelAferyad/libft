@@ -9,8 +9,8 @@ int	checker(int c)
 {
 	int a, b;
 	printf("--------Test for %d (%c) --------\n", c, c);
-	a = isascii(c);
-	b = ft_isascii(c);
+	a = isprint(c);
+	b = ft_isprint(c);
 	printf("Expected : %d\n", a);
 	printf("Got	 : %d\n", b);
 	if ((a && b) || (!a && !b))	
@@ -22,7 +22,7 @@ int	checker(int c)
 int	main(void)
 {
 	
-	printf("------ isascii test cases ------\n\n");
+	printf("------ isprint test cases ------\n\n");
 	
 	checker(0);
 	checker(1);

@@ -15,9 +15,9 @@ int	checker(int c)
 	printf("Expected : %d\n", a);
 	printf("Got	 : %d\n", b);
 	if ((a && b) || (!a && !b))	
-		printf("[PASSED] ^^\n");
+		printf("\033[0;32m[PASSED]\033[0m\n");
 	else
-		printf("[FAILD]  XX\n");
+		printf("\033[0;31m[FAILD]\033[0m\n");
 	return (a == b? 0 : 1);
 }
 int	main(void)

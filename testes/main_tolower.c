@@ -9,11 +9,11 @@ int	checker(int c)
 {
 	int a, b;
 	printf("--------Test for %d (%c) --------\n", c, c);
-	a = isascii(c);
-	b = ft_isascii(c);
+	a = tolower(c);
+	b = ft_tolower(c);
 	printf("Expected : %d\n", a);
 	printf("Got	 : %d\n", b);
-	if ((a && b) || (!a && !b))	
+	if (a == b)
 		printf("\033[0;32m[PASSED]\033[0m\n");
 	else
 		printf("\033[0;31m[FAILD]\033[0m\n");
@@ -21,8 +21,7 @@ int	checker(int c)
 }
 int	main(void)
 {
-	
-	printf("------ isascii test cases ------\n\n");
+	printf("------ isprint test cases ------\n\n");
 	
 	checker(0);
 	checker(1);

@@ -15,26 +15,18 @@
 
 void *ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	t;
 	size_t	i;
 
 	i = 0;
-	if ((char *) src + n == (char *) dest)
+	if (dest + n == src || src + n == dest)
 	{
-		t = n;
-		printf("hahwa\n\n");
-		while (i < t)
+		printf("true\n");
+		n--;
+		while (i <= n)
 		{
-			((char *) dest)[i] = ((char *) src)[n];  
+			((char *)dest)[n - i] = ((char *) src)[n - i];
 			i++;
-			n--;
 		}
 	}
-	/*
-	 * "0123456789"
-	 * "hello 123 world"
-	 * "456789"
-	 * "o 123 world"
-	 * */
 	return (dest);
 }
