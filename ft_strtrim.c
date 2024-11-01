@@ -6,7 +6,7 @@
 /*   By: aaferyad <aaferyad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 01:09:01 by aaferyad          #+#    #+#             */
-/*   Updated: 2024/11/01 02:03:27 by aaferyad         ###   ########.fr       */
+/*   Updated: 2024/11/01 15:48:51 by aaferyad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,30 @@
 
 static int	ft_check_start(char const *s1, char const *set)
 {
-	int	len_set;
+	int	i;
 
-	len_set = ft_strlen(set);
-	if (!ft_strncmp(s1, set, len_set))
-		return (len_set);
-	return (0);
+	i = 0;
+	while (s1[i])
+	{
+		if (!ft_strchr(set, s1[i]))
+			break ;
+		i++;
+	}
+	return (i);
 }
 
 static int	ft_check_end(char const *s1, char const *set)
 {
-	int	len_set;
-	int	len_s1;
-	int	index;
+	int	i;
 
-	len_s1 = ft_strlen(s1);
-	len_set = ft_strlen(set);
-	index = len_s1 - len_set;
-	if (index > 0 && !ft_strncmp(s1 + index, set, len_set))
-		return (len_s1 - len_set);
-	return (len_s1);
+	i = ft_strlen(s1) - 1;
+	while (i > 0)
+	{
+		if (!ft_strchr(set, s1[i]))
+			break ;
+		i--;
+	}
+	return (i + 1);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -45,6 +49,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1)
 		return (NULL);
+	if (!set)
+	{
+		str = ft_strdup(s1);
+		return (str);
+	}
 	start = ft_check_start(s1, set);
 	end = ft_check_end(s1, set);
 	if (start >= end)
