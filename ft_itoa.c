@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaferyad <aaferyad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/31 01:33:40 by aaferyad          #+#    #+#             */
-/*   Updated: 2024/11/01 16:10:58 by aaferyad         ###   ########.fr       */
+/*   Created: 2024/11/01 23:14:26 by aaferyad          #+#    #+#             */
+/*   Updated: 2024/11/01 23:50:01 by aaferyad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+static int	ft_count_nbr(int n)
 {
-	char	*str;
+	int	len;
 
-	if (!s && !s[start])
-		return (NULL);
-	str = malloc(sizeof(char) * (len + 1));
-	if (!str)
-		return (NULL);
-	ft_strlcpy(str, s + start, len + 1);	 
-	return (str);
+	len = 0;
+	if (n == 0)
+		return (1);
+	while (n > 0)
+	{
+		len++;
+		n /= 10;
+	}
+	return (len);
+}
+
+char	*ft_itoa(int n)
+{
+	int	len;
+	int	sign;
+
+	if (n < 0)
+	{
+		if (–2147483648 == n)
+			1
+	}
 }
