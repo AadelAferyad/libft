@@ -1,9 +1,12 @@
-#include "../libft.h"
+#include "libft.h"
 #include <limits.h>
 #include <string.h>
 #include <ctype.h>
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+
 
 
 /*
@@ -20,28 +23,24 @@
  * 0111 1101
  * 0111 1110
  * */
+
+static int	ft_count_nbr(int n)
+{
+	int	len;
+
+	len = 0;
+	if (n == 0)
+		return (1);
+	while (n > 0)
+	{
+		len++;
+		n /= 10;
+	}
+	return (len);
+}
 int main(void)
 {
-	int	a, *b;
-	b = &a;
-	printf("%s\n", s);
-	memset(b, 244, 1);
-	printf("all bytes  : %d\n", a);
-	printf("first byte : %d\n\n", ((char *) b)[0]);
-
-	bzero(b, 4);
-	ft_memset(b, 199, 1);
-	ft_memset(((char *) b) + 1, 255, 1);
-	ft_memset(((char *) b) + 2, 255, 1);
-	ft_memset(((char *) b) + 3, 255, 1);
-
-	printf("all bytes  : %d\n", a);
-	printf("first byte : %d\n\n", ((char *) b)[0]);
-
-	char *c, s;
-	c = &s;
-
-	ft_memset(s, -129, 1);
-
+	int	i = ft_count_nbr(-10);
+	printf("%d\n", i);
 	return (0);
 }
