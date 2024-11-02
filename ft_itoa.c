@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <stdlib.h>
 
-static int	ft_count_nbr(int n)
+static int	ft_count_nbr(long n)
 {
 	int	len;
 
@@ -28,14 +28,57 @@ static int	ft_count_nbr(int n)
 	return (len);
 }
 
+static int	ft_div(int len)
+{
+	int	i;
+	int	n;
+
+	i = 1;
+	n = 1;
+	while (i < len)
+	{
+		n = n * 10;
+		i++;
+	}
+	return(n);
+}
+
+static void	ft_fill(char *str, long n, int len, int sign)
+{
+	int	i;
+	int	div;
+
+	div = ft_div(len);
+	i = 0;
+	if (sign)
+		str[0] = '-';
+	while (i < len)
+	{
+		str[i + sign] = ((n / div) % 10) + 48;
+		i++;
+		div /= 10;
+	}
+	str[i + sign] = '\0';
+}
+
 char	*ft_itoa(int n)
 {
 	int	len;
 	int	sign;
+	long	nb;
+	char	*str;
 
+	sign = 0;
+	nb = (long) n;
 	if (n < 0)
 	{
-		if (–2147483648 == n)
-			1
+		sign++;
+		nb = -nb;
 	}
+	len = ft_count_nbr(nb);
+	str = malloc(sizeof(char) * (len + sign + 1));
+	if (!str)
+		return (NULL);
+	ft_fill(str, nb, len, sign);
+	return (str);
 }

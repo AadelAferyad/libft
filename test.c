@@ -24,23 +24,11 @@
  * 0111 1110
  * */
 
-static int	ft_count_nbr(int n)
-{
-	int	len;
-
-	len = 0;
-	if (n == 0)
-		return (1);
-	while (n > 0)
-	{
-		len++;
-		n /= 10;
-	}
-	return (len);
-}
 int main(void)
 {
-	int	i = ft_count_nbr(-10);
-	printf("%d\n", i);
+	int 	n = -2147483648;
+	/*int 	n = 0;*/
+	char	*s = ft_itoa(n);
+	printf("%s\n", s);
 	return (0);
 }
