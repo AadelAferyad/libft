@@ -3,7 +3,7 @@
 #include <ctype.h>
 #include "libft.h" 
 #include <stdio.h>
-
+#include <fcntl.h>
 
 /*0000 0001 0000 0011 0000 0011 0000 0111
  *0000 0000 0000 0000 0000 0101 0011 1001 --byte by byte --> 0 0 5 57
@@ -11,14 +11,19 @@
  * */
 int main(void)
 {
-	char s[] = "hello 123 world";
-	char d[] = "hello 123 world";
-	printf("%s\nstart from %c to %c\n", s, s[4], s[4]);
-	ft_memmove(s + 4, s, 4);
-	memmove(d + 4, d, 4);
-	if (strcmp(d, s) == 0)
-		printf("SAME OUTPUT\n");
-	printf("%s\n\n", s);
-	printf("%s\n", d);
+	int fd = open("testt", O_CREAT | O_RDONLY);
+	if (fd == -1)
+	{
+		printf("WALO WALOO MAKHDAM\n");
+		return (-1);
+		
+	}
+	/*ft_putnbr_fd(1337 , fd);*/
+	char b[12];
+	/*lseek(fd, 0, SEEK_SET);*/
+	int a = read(fd, b, 12);
+	printf("%d\n%s\n", a, b);
+	int	x = close(fd);
+	printf("%d\n", x);
 	return (0);
 }
