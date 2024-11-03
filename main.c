@@ -11,19 +11,36 @@
  * */
 int main(void)
 {
-	int fd = open("testt", O_CREAT | O_RDONLY);
-	if (fd == -1)
+	/*char	a = 'a';*/
+	/*int	b = 98;*/
+	/*int	c = 99;*/
+	/*int	d = 100;*/
+	/*int	e = 101;*/
+	int	f = 102;
+	t_list *head;
+	/*t_list	*s = ft_lstnew(&e);*/
+	/*t_list *new = ft_lstnew(&d);*/
+	/*t_list *new1 = ft_lstnew(&c);*/
+	/*t_list *new2 = ft_lstnew(&b);*/
+	/*t_list *new3 = ft_lstnew(&a);*/
+	t_list *new4 = ft_lstnew(&f);
+	head = NULL;
+
+	/*(void )s;*/
+	/*ft_lstadd_front(&head, new);*/
+	/*ft_lstadd_front(&head, new1);*/
+	/*ft_lstadd_front(&head, new2);*/
+	/*ft_lstadd_front(&head, new3);*/
+	ft_lstadd_back(&head, new4);
+
+	printf("size of linked list : %d\n", ft_lstsize(head));
+	t_list *last_node = ft_lstlast(head);
+	printf("the last node : (%c)-->NULL\n", *(int *) last_node->content);
+	while (head)
 	{
-		printf("WALO WALOO MAKHDAM\n");
-		return (-1);
-		
+		printf("(%c)-->", *(int *)head->content);
+		head = head->next;
 	}
-	/*ft_putnbr_fd(1337 , fd);*/
-	char b[12];
-	/*lseek(fd, 0, SEEK_SET);*/
-	int a = read(fd, b, 12);
-	printf("%d\n%s\n", a, b);
-	int	x = close(fd);
-	printf("%d\n", x);
+	printf("NULL\n");
 	return (0);
 }

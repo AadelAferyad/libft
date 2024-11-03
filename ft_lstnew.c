@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaferyad <aaferyad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 18:06:59 by aaferyad          #+#    #+#             */
-/*   Updated: 2024/11/03 21:20:27 by aaferyad         ###   ########.fr       */
+/*   Created: 2024/11/03 21:49:30 by aaferyad          #+#    #+#             */
+/*   Updated: 2024/11/03 22:26:02 by aaferyad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+#include <stdlib.h>
+/*
+ * ft_lstnew - create new node
+ * @content: void pointer can take any data
+ * Return: then new node
+ * */
 
-void *ft_memmove(void *dest, const void *src, size_t n)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	i;
+	t_list	*node;
 
-	i = 0;
-	if (dest >= src && dest < src + n)
-	{
-		printf("true\n");
-		n--;
-		while (i <= n)
-		{
-			((char *)dest)[n - i] = ((char *) src)[n - i];
-			i++;
-		}
-	}
-	else
-		ft_memcpy(dest, src, n);
-	return (dest);
+	if (!content)
+		return (NULL);
+	node = malloc(sizeof(t_list));
+	if (!node)
+		return (NULL);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }
