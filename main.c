@@ -73,5 +73,6 @@ int main(void)
 	if (!tem1)
 		printf("POINTER IS NULLED\n");
 	printf("SHOULD BE EMPTY LIST\n");
+
 	return (0);
 }
