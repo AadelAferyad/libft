@@ -12,6 +12,20 @@
 
 #include "libft.h"
 
+static int	ft_check_escape(char *s, char c)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		if (c == s[i])
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 int	ft_atoi(const char *nptr)
 {
 	int	n;
@@ -21,7 +35,7 @@ int	ft_atoi(const char *nptr)
 	sign = 1;
 	i = 0;
 	n = 0;
-	while (nptr[i] == 32 || nptr[i] == '\t')
+	while (!ft_check_escape(" \n\t\v\f\r", nptr[i]))
 		i++;
 	if (nptr[i] == '-' || nptr[i] == '+')
 	{

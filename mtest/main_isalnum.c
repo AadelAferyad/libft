@@ -21,33 +21,15 @@ int	checker(int c)
 }
 int	main(void)
 {
-	
+	int i;	
 	printf("------ isalnum test cases ------\n\n");
-	checker(48);
-	checker(49);
-	checker(50);
-	checker(51);
-	checker(52);
-	checker(53);
-	checker(54);
-	checker(55);
-	checker(56);
-	checker(57);
-	checker(97);
-	checker('2');
-	checker(100);
-	checker(0);
-	checker(70);
-	checker(65);
-	checker(-1);
-	checker(48);
-	checker(20);
-	checker(50);
-	checker(255);
-	checker('\0');
-	checker('^');
-	checker(1337);
-	checker(2024);
-	checker(1);
+	int	j = -127;
+	while (j < 250)
+	{
+		i = checker(1);
+		if (i)
+			return (-1);
+		j++;
+	}
 	return (0);
 }
