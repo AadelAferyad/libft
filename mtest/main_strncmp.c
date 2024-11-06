@@ -61,6 +61,8 @@ int	main(void)
 	int i1 = ((strncmp(s1, s2, size) > 0) ? 1 : ((strncmp(s1, s2, size) < 0) ? -1 : 0));
 	int i2 = ((ft_strncmp(s1, s2, size) > 0) ? 1 : ((ft_strncmp(s1, s2, size) < 0) ? -1 : 0));
 	printf("%d %d\n", i1, i2);
-	/*checker(s1, s2, 6);*/
+	int a  = ft_strncmp("abcdefgh", "", 0);/*checker(s1, s2, 6);*/
+	int b  = strncmp("abcdefgh", "", 0);/*checker(s1, s2, 6);*/
+	printf("Got : %d\nExpected : %d\n", a, b);
 	return (0);
 }

@@ -26,10 +26,10 @@ int	main(void)
 	int	j = -127;
 	while (j < 250)
 	{
-		i = checker(1);
-		if (i)
-			return (-1);
+		i = checker(j);
 		j++;
 	}
+	checker(357);
+	checker(1073);
 	return (0);
 }

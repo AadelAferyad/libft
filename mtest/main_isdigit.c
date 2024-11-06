@@ -23,23 +23,19 @@ int	main(void)
 {
 	
 	printf("------ isdigit test cases ------\n\n");
-	checker(48);
-	checker(49);
-	checker(50);
-	checker(51);
-	checker(52);
-	checker(53);
-	checker(54);
-	checker(55);
-	checker(56);
-	checker(57);
-	checker(97);
-	checker('2');
-	checker(100);
+	int i = '0';
+	while (i < '9')
+	{
+		checker(i);
+		i++;
+	}
 	checker(0);
 	checker(70);
 	checker(65);
 	checker(-1);
+	checker(-12);
+	checker(-22);
+	checker(-1337);
 	checker(48);
 	checker(20);
 	checker(50);
@@ -49,5 +45,7 @@ int	main(void)
 	checker(1337);
 	checker(2024);
 	checker(1);
+	checker(357);
+	checker(1073);
 	return (0);
 }

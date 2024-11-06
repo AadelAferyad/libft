@@ -23,8 +23,23 @@ int	checker(int c)
 int	main(void)
 {
 	printf("------ isalpha test cases ------\n\n");
+	int	i;
+	int	j;
+
+	j = 'Z';
+	i = 'A';
+	
+	while (i <= j)
+	{
+		if (i == 'Z' && i == j)
+		{
+			i = 'a';
+			j = 'z';
+		}
+		checker(i);
+		i++;
+	}
 	checker(97);
-	checker(100);
 	checker(0);
 	checker(70);
 	checker(65);
@@ -38,5 +53,6 @@ int	main(void)
 	checker(1337);
 	checker(2024);
 	checker(1);
+	checker(357);
 	return (0);
 }

@@ -50,8 +50,28 @@ int	main(void)
 	checker("hello world", 0);
 	checker("", 'w');
 	checker("", 0);
-	checker(NULL, 2);
 	checker("\0", '\0');
 	
+	char	*a, *b;
+
+	printf("----------------------\n");
+        a = strchr("teste", 357) ;
+        b = ft_strchr("teste", 357) ;
+	printf("Expected : %s\nGot  :%s\n\n", a, b);
+        a = strchr("teste", 't') ;
+        b = ft_strchr("teste", 't') ;
+	printf("Expected : %s\nGot  :%s\n\n", a, b);
+        a = strchr("teste", 'e') ;
+        b = ft_strchr("teste", 'e') ;
+	printf("Expected : %s\nGot  :%s\n\n", a, b);
+        a = strchr( "teste", '\0');
+        b = ft_strchr( "teste", '\0');
+	printf("Expected : %s\nGot  :%s\n\n", a, b);
+        a = strchr( "teste", 'a');
+        b = ft_strchr( "teste", 'a');
+	printf("Expected : %s\nGot  :%s\n\n", a, b);
+        a = strchr("teste", 1024) ;
+        b  = ft_strchr("teste", 1024) ;
+	printf("Expected : %s|\nGot  :%s\n\n", a, b);
 	return (0);
 }
