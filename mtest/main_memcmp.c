@@ -66,6 +66,8 @@ int	main(void)
 	int i1 = memcmp(s1, s2, size);
 	int i2 = ft_memcmp(s1, s2, size);
 	printf("%d %d\n", i1, i2);
-
+	i1 = memcmp("zyxbcdefgh", "abcdefgxyz", 0);
+	i2 = ft_memcmp("zyxbcdefgh", "abcdefgxyz", 0);
+	printf("%d %d\n", i1, i2);
 	return (0);
 }
