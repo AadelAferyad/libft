@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaferyad <aaferyad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/03 22:26:58 by aaferyad          #+#    #+#             */
-/*   Updated: 2024/11/03 22:52:19 by aaferyad         ###   ########.fr       */
+/*   Created: 2024/11/06 16:58:54 by aaferyad          #+#    #+#             */
+/*   Updated: 2024/11/06 16:58:58 by aaferyad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if (!lst || !new)
-		return ;
-	new->next = *lst;
-	*lst = new;
+	(void) lst;
+	(void) f;
+	(void) del;
+	/*t_list	*node;*/
+	/*t_list	*tmp;*/
+	/**/
+	/*if (!lst || !f || !del)*/
+	/*	return (NULL);*/
+	/*tmp = lst;*/
+	/*while (tmp)*/
+	/*{*/
+	/**/
+	/*	tmp = tmp->next;*/
+	/*}*/
+	return (NULL);
 }
