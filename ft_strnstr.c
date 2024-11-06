@@ -33,8 +33,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	while (big[i] && i < len)
 	{
 		j = 0;
-		while (i + j < len && big[i + j] && little[j] && !ft_chrchr(big[i + j], little[j]))
+		while (i + j < len && big[i + j] && little[j])
 		{
+			if (ft_chrchr(big[i + j], little[j]))
+				break ;
 			j++;
 		}
 		if (!little[j])

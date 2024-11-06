@@ -44,9 +44,9 @@ int	ft_div(int len)
 
 void	ft_writer(long nb, int sign, int fd)
 {
-	int	len;
-	int	div;
-	int	i;
+	int		len;
+	int		div;
+	int		i;
 	char	c;
 
 	i = 0;
@@ -66,7 +66,7 @@ void	ft_writer(long nb, int sign, int fd)
 void	ft_putnbr_fd(int n, int fd)
 {
 	long	nb;
-	int	sign;
+	int		sign;
 
 	nb = (long) n;
 	sign = 0;

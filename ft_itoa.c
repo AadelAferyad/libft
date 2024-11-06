@@ -40,7 +40,7 @@ static int	ft_div(int len)
 		n = n * 10;
 		i++;
 	}
-	return(n);
+	return (n);
 }
 
 static void	ft_fill(char *str, long n, int len, int sign)
@@ -63,8 +63,8 @@ static void	ft_fill(char *str, long n, int len, int sign)
 
 char	*ft_itoa(int n)
 {
-	int	len;
-	int	sign;
+	int		len;
+	int		sign;
 	long	nb;
 	char	*str;
 

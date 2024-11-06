@@ -34,14 +34,14 @@ static int	ft_count_words(char const *s, char c)
 static char	*ft_alloc(char const *s, int start, int end)
 {
 	char	*str;
-	int	len;
+	int		len;
 
 	len = end - start;
 	str = ft_substr(s, start, len);
 	return (str);
 }
 
-static void	ft_split_healper(char const *s, char c, char ** grid)
+static void	ft_split_healper(char const *s, char c, char **grid)
 {
 	int	i;
 	int	j;
@@ -58,7 +58,7 @@ static void	ft_split_healper(char const *s, char c, char ** grid)
 			start = j;
 		if (s[j + 1] == c || (!s[j + 1] && start != -1))
 		{
-			grid[i] = ft_alloc(s, start, j + 1);  
+			grid[i] = ft_alloc(s, start, j + 1);
 			i++;
 			start = -1;
 		}
@@ -83,9 +83,9 @@ static void	ft_collector(char **grid, int len)
 
 char	**ft_split(char const *s, char c)
 {
-	int	words;
+	int		words;
+	int		i;
 	char	**grid;
-	int	i;
 
 	i = 0;
 	if (!s)
