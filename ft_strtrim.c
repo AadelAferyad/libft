@@ -57,7 +57,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = ft_check_start(s1, set);
 	end = ft_check_end(s1, set);
 	if (start >= end)
-		return (NULL);
+		return (ft_strdup(""));
 	str = ft_substr(s1, start, end - start);
 	return (str);
 }
