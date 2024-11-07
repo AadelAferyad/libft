@@ -85,9 +85,13 @@ int	main(void)
 	ft_memset(((char *)j) + 1, 'C',  1);
 	ft_memset(((char *)j) + 2, 'B',  1);
 	ft_memset(((char *)j) + 3, 'A',  1);
+	i1 = memcmp(x, j, 4);
+	i2 = ft_memcmp(x, j, 4);/*[[D] [C] [B] [A]]*/
+	printf("Expected : %d (%c)\n", i1, i1 == 0 ? '0' : i1);
+	printf("Got	 : %d (%c)\n", i2, i2 == 0 ? '0' : i2);
+	i2 = ft_memcmp(x, j, 100);/*[[D] [C] [B] [A]]*/
 	i1 = memcmp(x, j, 100);
-	i2 = ft_memcmp(x, j, 100);
-	printf("Expected : %d\n", i1);
-	printf("Got	 : %d\n", i2);
+	printf("Expected : %d (%c)\n", i1, i1);
+	printf("Got	 : %d (%c)\n", i2, i2);
 	return (0);
 }
