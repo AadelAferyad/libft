@@ -69,7 +69,7 @@ void	test_gen(char *str, int size, int len)
 int	main(void)
 {
 	/*To check segv uncomment this code IT SHOLD SEG V*/
-	/*checker(NULL, 12, 1);*/
+	/*checker(NULL, NULL, 12, 1);*/
 	test_gen("hello", 2, 5);
 	
 	test_gen("hello", 0, 5);
@@ -92,9 +92,10 @@ int	main(void)
 	free(s);
 	free(s1);
 
-	char *s2 = ft_strdup("hello");
-	bzero(s2, 10000);
-	printf("ss %s", s2);
-	free(s2);
+	s = ft_strdup("hello");
+	s1 = ft_strdup("hello");
+	bzero(s1, 1000);
+	ft_bzero(s, 1000);
+	checker(s1, s, 1000, 1000);
 	return (0);
 }

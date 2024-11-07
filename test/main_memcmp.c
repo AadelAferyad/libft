@@ -65,9 +65,29 @@ int	main(void)
 	size_t size = 8;
 	int i1 = memcmp(s1, s2, size);
 	int i2 = ft_memcmp(s1, s2, size);
-	printf("%d %d\n", i1, i2);
+	printf("Expected : %d\n", i1);
+	printf("Got	 : %d\n", i2);
 	i1 = memcmp("zyxbcdefgh", "abcdefgxyz", 0);
 	i2 = ft_memcmp("zyxbcdefgh", "abcdefgxyz", 0);
-	printf("%d %d\n", i1, i2);
+	printf("Expected : %d\n", i1);
+	printf("Got	 : %d\n", i2);
+
+	int	*x, z;
+	int	*j, g;
+	x = &z;
+	j = &g;
+	ft_memset(((char *)x), 'D',  1);
+	ft_memset(((char *)x) + 1, 'C',  1);
+	ft_memset(((char *)x) + 2, 'B',  1);
+	ft_memset(((char *)x) + 3, 'A',  1);
+
+	ft_memset(((char *)j), 'D',  1);
+	ft_memset(((char *)j) + 1, 'C',  1);
+	ft_memset(((char *)j) + 2, 'B',  1);
+	ft_memset(((char *)j) + 3, 'A',  1);
+	i1 = memcmp(x, j, 100);
+	i2 = ft_memcmp(x, j, 100);
+	printf("Expected : %d\n", i1);
+	printf("Got	 : %d\n", i2);
 	return (0);
 }
