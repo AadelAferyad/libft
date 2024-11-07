@@ -29,7 +29,7 @@ int	checker(char *s, char *s1, size_t c)
 int	main(void)
 {
 	
-	printf("------ strncmp test cases ------\n\n");
+	printf("------ memcmp test cases ------\n\n");
 	checker("hello world", "hello world", 13);
 	checker("hello world", "hello world", 13);
 	checker("hello world", "hello world", 9);
