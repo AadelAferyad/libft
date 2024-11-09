@@ -64,5 +64,6 @@ int	main(void)
 	int a  = ft_strncmp("abcdefgh", "", 0);/*checker(s1, s2, 6);*/
 	int b  = strncmp("abcdefgh", "", 0);/*checker(s1, s2, 6);*/
 	printf("Got : %d\nExpected : %d\n", a, b);
+	checker("hello", "hella", 5);
 	return (0);
 }
