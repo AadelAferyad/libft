@@ -18,13 +18,13 @@ char	*ft_strdup(const char *s)
 	char	*ptr;
 
 	if (!s)
-		return ((void *) 0);
+		return (NULL);
 	len = 0;
 	while (s[len])
 		len++;
 	ptr = malloc(sizeof(char) * (len + 1));
 	if (!ptr)
-		return ((void *) 0);
+		return (NULL);
 	ft_memcpy(ptr, s, len);
 	ptr[len] = '\0';
 	return (ptr);

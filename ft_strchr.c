@@ -25,5 +25,5 @@ char	*ft_strchr(const char *s, int c)
 	}
 	if ((unsigned char) c == 0)
 		return (&((char *)s)[i]);
-	return ((void *)0);
+	return (NULL);
 }

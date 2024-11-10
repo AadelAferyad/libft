@@ -68,6 +68,8 @@ void	ft_putnbr_fd(int n, int fd)
 	long	nb;
 	int		sign;
 
+	if (fd == -1)
+		return ;
 	nb = (long) n;
 	sign = 0;
 	if (n < 0)
