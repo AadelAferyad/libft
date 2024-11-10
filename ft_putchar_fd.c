@@ -11,11 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
- * ft_putchar_fd - write a char to a file discriptor
- * @c: the character.
- * @fd: file discriptor
- * */
 
 void	ft_putchar_fd(char c, int fd)
 {

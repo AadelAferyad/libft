@@ -11,12 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-/*
- * ft_lstnew - create new node
- * @content: void pointer can take any data
- * Return: then new node
- * */
 
 t_list	*ft_lstnew(void *content)
 {

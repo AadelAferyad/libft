@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_len_nbr(long n)
+static int	ft_len_nbr(long n)
 {
 	int	len;
 
@@ -27,7 +27,7 @@ int	ft_len_nbr(long n)
 	return (len);
 }
 
-int	ft_div(int len)
+static int	ft_div(int len)
 {
 	int	i;
 	int	n;
@@ -42,7 +42,7 @@ int	ft_div(int len)
 	return (n);
 }
 
-void	ft_writer(long nb, int sign, int fd)
+static void	ft_writer(long nb, int sign, int fd)
 {
 	int		len;
 	int		div;
