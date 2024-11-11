@@ -30,26 +30,41 @@ static int	ft_count_words(char const *s, char c)
 	return (words);
 }
 
-static char	*ft_alloc(char const *s, int start, int end)
+static char	*ft_alloc(char const *s, int *start, int end)
 {
 	char	*str;
 	int		len;
 
-	len = end - start;
-	str = ft_substr(s, start, len);
+	len = end - *start;
+	str = ft_substr(s, *start, len);
+	*start = -1;
 	return (str);
 }
 
-static void	ft_split_healper(char const *s, char c, char **grid)
+static void	ft_collector(char **grid)
+{
+	int	i;
+
+	i = 0;
+	while (grid[i])
+	{
+		free(grid[i]);
+		grid[i] = NULL;
+		i++;
+	}
+	grid = NULL;
+}
+
+static int	ft_split_healper(char const *s, char c, char **grid)
 {
 	int	i;
 	int	j;
 	int	start;
 
 	i = 0;
-	j = 0;
+	j = -1;
 	start = -1;
-	while (s[j])
+	while (s[++j])
 	{
 		while (s[j + 1] && s[j] == c)
 			j++;
@@ -57,52 +72,33 @@ static void	ft_split_healper(char const *s, char c, char **grid)
 			start = j;
 		if (s[j + 1] == c || (!s[j + 1] && start != -1))
 		{
-			grid[i] = ft_alloc(s, start, j + 1);
-			i++;
-			start = -1;
+			grid[i] = ft_alloc(s, &start, j + 1);
+			if (!grid[i++])
+			{
+				ft_collector(grid);
+				return (1);
+			}
 		}
-		j++;
 	}
 	grid[i] = NULL;
-}
-
-static void	ft_collector(char **grid, int len)
-{
-	int	i;
-
-	i = 0;
-	while (i < len)
-	{
-		if (grid[i])
-			free(grid[i]);
-		i++;
-	}
-	free(grid);
+	return (0);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	int		words;
-	int		i;
 	char	**grid;
 
-	i = 0;
 	if (!s)
 		return (NULL);
 	words = ft_count_words(s, c);
 	grid = malloc(sizeof(char *) * (words + 1));
 	if (!grid)
 		return (NULL);
-	ft_split_healper(s, c, grid);
-	while (i < words - 1)
+	if (ft_split_healper(s, c, grid))
 	{
-		if (!grid[i])
-		{
-			ft_collector(grid, words);
-			grid = NULL;
-			break ;
-		}
-		i++;
+		free(grid);
+		return (NULL);
 	}
 	return (grid);
 }
