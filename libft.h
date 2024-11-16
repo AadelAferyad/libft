@@ -6,7 +6,7 @@
 /*   By: aaferyad <aaferyad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 18:02:36 by aaferyad          #+#    #+#             */
-/*   Updated: 2024/11/15 13:21:23 by aaferyad         ###   ########.fr       */
+/*   Updated: 2024/11/16 12:40:37 by aaferyad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,5 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 int	ft_putchar(int c);
 int	ft_puts(const char *s);
 int	ft_putnbr(int n);
+char	*ft_reverse(char *str);
 #endif
