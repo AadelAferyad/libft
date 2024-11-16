@@ -27,6 +27,8 @@ char	*ft_reverse(char *str)
 		tmp = str[i];
 		str[i] = str[len - 1];
 		str[len - 1] = tmp;
+		i++;
+		len--;
 	}
 	return (str);
 }
