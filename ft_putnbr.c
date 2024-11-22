@@ -40,7 +40,7 @@ static int	ft_count_div(int len)
 
 static int	ft_writer(long nb, int div)
 {
-	int	len;
+	int		len;
 	char	n;
 
 	len = 0;
@@ -56,8 +56,8 @@ static int	ft_writer(long nb, int div)
 
 int	ft_putnbr(int n)
 {
-	int	len;
-	int	div;
+	int		len;
+	int		div;
 	long	nb;
 
 	nb = (long) n;
@@ -69,5 +69,4 @@ int	ft_putnbr(int n)
 	len = ft_count_len(nb);
 	div = ft_count_div(len);
 	return (ft_writer(nb, div) + (n < 0));
-	
 }

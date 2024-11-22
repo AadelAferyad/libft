@@ -15,8 +15,8 @@
 char	*ft_reverse(char *str)
 {
 	char	tmp;
-	int	i;
-	int	len;
+	int		i;
+	int		len;
 
 	if (!str)
 		return (NULL);

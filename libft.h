@@ -67,8 +67,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-int	ft_putchar(int c);
-int	ft_puts(const char *s);
-int	ft_putnbr(int n);
+int		ft_putchar(int c);
+int		ft_puts(const char *s);
+int		ft_putnbr(int n);
 char	*ft_reverse(char *str);
 #endif
